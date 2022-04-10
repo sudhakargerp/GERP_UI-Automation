@@ -1,0 +1,330 @@
+Week1-Day1 - Java
+====================
+
+Introuction of Java:
+=======================
+Java Selenium is used to the automate the Frontend Web Application (UI - UserInterface)
+
+Any application that can be accessed in browser can be automated using Java Selenium
+Selenium is an open source tool - Freeware software and not a commerical licence software
+
+-Manual interactions in the web page, we will be able to use Selenium to automate
+-Selenium cannot interact with excel or desktop applications
+
+Apache POI library available which can be used to read the data from excel and pass into Selenium - We will cover later classes
+
+Java is an Object oriented language
+
+Programming Languages used to automate Selenium - Java	Python	JavaScript	C#	Python	Ruby	Perl	PHP
+
+Java 1.8 Freeverion
+Java 17 - Commerical Version
+
+For Programming Java, we use IDE (Integrated Development Environment) -> Eclipse, IntelliJ and NetBeans
+
+IntelliJ and NetBeans (Some of the features have licensing cost)
+Eclipse - Open Source tool and it has lot of features for Java Development
+
+
+Class, Objects, Method and Variables
+
+Car, Student are example of Class - Class is a template or Blue print for the Object, First Character of word or two words should be UpperCase
+
+Objects: First Character of word or two words should be UpperCase
+========
+Toyota
+Hyndai
+Ford
+Honda
+
+Method: 
+- Actions or Verification that is performed on the Object is called as Methods 
+- First Character of the word should be smaller case and second word first character should be Upper Case - This naming convention is called Camel Case
+- The name must not contain any white spaces
+- The name should not start with any special characters like & (ampersand), $ (dollar), _ (underscore)
+===========================================
+In Car below are the action that you can perform,
+drive
+park
+applyBrake
+canReverse
+applyHonk
+
+
+Human is a Class - Characteristics of Human - 2 Eyes, 1 Nose, 1 Mouth, 2 Leg, 1 Head
+
+Object of Human:
+Ankita
+Sudhakar
+Ramadevi
+Sandeep
+Kalaivani
+
+Action Human performs - Methods
+canWalk, canRun, CanEat, canSleep, canLaugh, canCry
+
+Information / Data of a Class is called as Variables - First Character of the word should be smaller case and second word first character should be Upper Case - This naming convention is called Camel Case 
+=====================================================
+Car:
+numerOfWheels
+numerOfSeat
+bodyColor
+carModel
+numberPlate
+carPrice
+
+Variables - Information of Class:
+=================================
+Variable has 2 types - Global Variable, Local Variable
+Syntax: //accessSprifier dataType variableName = variableValue;
+public String gender= 'Male";
+
+Human Class below are the variables,
+height
+weight
+age
+geneder
+color
+
+Car Class below are the variables,
+bodyColor
+numberOfSeats
+numerOfWheels
+carModel
+
+Primitive data type: (Variable is not pre-defined)
+==========================
+Category	Types	Size (bits)	Minimum Value	Maximum Value
+Integer	byte	8	-128	127
+	short	16	-215	215-1
+	int	32	-231	231-1
+	long	64	-263	263-1
+Floating-point	float	32	2-149	(2-2-23)·2127
+	double	64	2-1074	(2-2-52)·21023
+Other	boolean	--	--	--
+	char	16	0	216-1
+	
+Non-Primtive data type:
+============================
+String is a Class (String of the memory is pre-defined)
+All the Class in Java is a non-primitive data type
+
+
+All the Java codes to be created under the project
+
+MavenProject - Build Tool - Multiple programming files are package and it is called Build that can be deployed
+
+MavenProject has the below child structure
+	src/main/java - Main Development / All automation scripts are created in the src/main/java
+	src/test/java - Unit Testing
+ 
+Class Room Excercise1:
+========================
+Create package name as mar22.week1.day1
+Create a new class as "Car" under mar22.week1.day1
+Create 2methods (applyBrake(), applyHonk() with simple print statement
+Create main method
+Create object for Car class and call the methods using the object
+Execute the class and get the result in the console
+
+
+	
+Intorduction to Class, Variables and Methods:
+================================================
+package mar22.week1.day1;
+
+// AccessSpecifier Class ClassName
+public class Bus {
+	
+	String color = "Red";
+
+	// AccessSpecifier returnType methodName
+	public void driveCar() {
+		color = "Black";
+		System.out.println(color);
+		System.out.println("Drive Car");
+	}
+	
+	public void applyBrake() {
+		System.out.println(color);
+		System.out.println("Apply Brake");
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("In main method");
+		Bus myCar = new Bus();
+		System.out.println(myCar.color);
+		myCar.driveCar();
+		myCar.applyBrake();
+	}
+	
+}
+
+Operators in Java:
+=====================
+
+Arithmetic Operators:
++,-,*,/,%
+% is called Mod operator
+
+Example: 
+30/2=15 (15 Quotiemnt) - / will print the Quotient
+31%2= 1 - Mod will print the Reminder
+
+Relational Operators:
+< , >, <=, >=, !=, ==
+
+
+Logical Operators:
+&& (AND),  || (OR)
+
+Assignment Operator:
+=
+
+int a=10;
+int b =a;
+
+
+Control Flow Statements:
+==================
+Conditional Statements:
+if 
+if else
+if else if
+switch
+
+Looping Statements:
+while
+do while
+for
+
+//initialize; condition; increment (or) decrement
+
+Jump Statements:
+break
+continue
+return
+
+
+
+Learn For loop:
+============
+package week1.day1;
+
+public class LearnForLoop {
+
+	public static void main(String[] args) {
+		// Print numbers from 1 to 10
+		// initialize value; condition; increment/ decrement
+		for(int i=1; i<=10; i++) {
+			if (i%2!=0) {
+				System.out.println(i);
+			}
+		}
+	}
+}
+
+Learn If Condition
+====================
+package week1.day1;
+
+public class LearnIfCondition {
+
+	public static void main(String[] args) {
+		
+		int age = -15;
+		if (age > 60) {
+			System.out.println("Senior Citizen");
+		}
+		else if(age >= 18 && age <60) {
+			System.out.println("Adult");
+		}
+		
+		else if(age > 0) {
+			System.out.println("Not Adult");
+		}
+		else {
+			System.out.println("Age not applicable");
+		}
+	}
+}
+
+Learn Operators:
+=================
+package week1.day1;
+
+public class LearnOperators {
+
+	public static void main(String[] args) {
+		System.out.println(2 + 3);
+		System.out.println(5 - 10);
+		System.out.println(5 * 5);
+		System.out.println(10 / 2);
+		System.out.println(10 % 4);
+		
+		System.out.println(2!=3 && 4<5 && 5==6);
+		System.out.println(2!=3 || 4<5 || 5==6);
+		System.out.println((2!=3 && 4<5) || 5==6);
+	}
+}
+
+Learn Variables:
+====================
+package week1.day1;
+
+public class LearnVariables {
+
+	public static void main(String[] args) {
+		// Primitive datatypes
+		// datatype variableName = value
+		// byte, short, int, long
+		byte seatingCapacity = 5;
+		int carPrice = 800000;
+		long ownerNumber = 9345658249L;
+		
+		// decimal - float, double
+		float mileage = 20.5f;
+		
+		// character - char
+		char engine = 'P';
+		
+		// boolean - true/ false
+		boolean preOwned = false;
+		
+		// text - sequence of characters
+		String color = "Red";
+
+		System.out.println(preOwned);
+	}
+
+}
+
+
+Home Room Assignment 1:
+===========================
+Create package name as week1.day1
+Create a new class as "mobile" under week1.day1
+Create 2methods (makeCall(), sendMsg() with simple print statement
+Create main method
+Create object for Mobile class and call the methods using the object
+Execute the class and get the result in the console
+
+
+Home Room Assignment 2:
+==========================
+1. Create Global Variables with different data types
+	mobileModel (with String data type)
+	mobileWeight (with int data type)
+	isFullCharge (with boolean data type)
+	mobielCost (with double data type)
+- Call all the global variables from main method and print all values in console
+
+
+
+
+
+
+
+
+
+
