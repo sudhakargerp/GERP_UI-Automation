@@ -18,7 +18,7 @@ public class Bus {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("In main method");
+		System.out.println("In the main method");
 		Bus myCar = new Bus();
 		System.out.println(myCar.color);
 		myCar.driveCar();
