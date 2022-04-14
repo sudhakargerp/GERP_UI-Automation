@@ -1,0 +1,167 @@
+Assignment1: PrimeNumber
+=========================
+13 % 1 == 0
+13 % 2 == 1
+13 % 3 == 1
+13 % 4 == 1
+13 % 5 == 3
+13 % 6 == 1
+13 % 7 == 6
+13 % 8 == 5
+13 % 9 == 4
+13 % 10 == 3
+13 % 11 == 2
+13 % 12 == 1
+13 % 13 == 0
+
+int input = 13;
+int count=0;
+for (i = 1; i<= input; i++)
+{
+	if(i % 2 =0){
+	count = count+1;
+	}
+}
+
+if (count==2)
+{
+Syso("Given number is prime");
+}
+else
+{
+Syso("GIven number is not prime");
+}
+
+Assignmnet 2:ArmstrongNumber
+==============================
+inputs: 153
+output: (1*1*1)+(5*5*5)+(3*3*3) = 153
+
+   
+package week1.day1.assignments;
+public class ArmstrongNumber {
+
+	/*
+	 * Goal: To find whether a number is an Armstrong number or not
+	 * 
+	 * inputs: 153
+	 * output: (1*1*1)+(5*5*5)+(3*3*3) = 153
+	 * 
+	 * Shortcuts:
+	 * 1) Print : type: syso, followed by: ctrl + space + enter
+	 * 2) To create a While loop, type 'while' followed by: ctrl + space + down arrow + enter
+	 * 3) To create an 'if' condition: type 'if', followed by ctrl + space +down arrow + enter
+	 *   
+	 * What are my learnings from this code?
+	 * 1)
+	 * 2)
+	 * 3) 
+	 * 
+	 */
+
+	
+
+	public static void main(String[] args) {
+
+		// Declare your input
+
+
+			// Declare 3 more int variables as calculated, remainder, original (Tip: Initialize calculated alone)
+		
+
+			// Assign input into variable original 
+
+			// Use loop to calculate: use while loop to set condition until the number greater than 0
+
+			// Within loop: get the remainder when done by 10 (Tip: Use Mod operator)
+
+			// Within loop: get the quotient when done by 10 (Tip: Assign the result to input)
+
+			// Within loop: Add calculated with the cube of remainder & assign it to calculated
+
+			// Check whether calculated and original are same
+
+			//When it matches print it as Armstrong number
+	}
+}
+
+
+
+Assignment 3:How to pass input to method and how to get output from method:
+================================================================================
+Create a class called Calculator with below methods
+ - add() with 2 arguments and return the sum
+ - sub() with 2 double arguments and return the subtraction result
+ - mul() with 2 double arguments and return the result
+ - divide() with 2 arguments and return the result
+ 
+ Arrays  - Assignment 4:
+ ===========================
+import java.util.Arrays;
+
+public class FindSecondLargest {
+
+	public static void main(String[] args) {
+
+		// Here is the input
+		int[] data = {3,2,11,4,6,7};
+/*
+		 Pseudo Code:
+		 1) Arrange the array in ascending order
+		 2) Pick the 2nd element from the last and print it
+		 */
+		 
+		 
+		 public class MissingElementInAnArray {
+
+	public static void main(String[] args) {
+		// Here is the input
+		int[] arr = {1,2,3,4,7,6,8};
+
+		// Sort the array	
+		
+
+		// loop through the array (start i from arr[0] till the length of the array)
+
+			// check if the iterator variable is not equal to the array values respectively
+			
+				// print the number
+				
+				// once printed break the iteration
+				
+				
+		
+
+	}
+
+}
+
+Arrays - Assignment 5:
+========================
+
+public class PrintDuplicatesInArray {
+
+	public static void main(String[] args) {
+		
+		int[] arr = {14,12,13,11,15,14,18,16,17,19,18,17,20};
+		
+		// get the length of the array
+		// declare an int variable named count
+		
+		// iterate from 0 to the array length-1 (outer loop starts here)
+		
+			// assign 0 to count 
+			
+			// iterate from i to the length of the array by adding 1 to it (inner loop starts here)
+			
+					// compare both the loop variables & check they're equal
+				
+							// increase the count if both the arrays are equal
+					
+			// Out of the inner loop, check and print the first array variable if count is more than 0
+			
+			
+		
+	}
+
+}

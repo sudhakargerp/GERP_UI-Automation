@@ -1,0 +1,238 @@
+Day 2 - Java - Topics planned to cover Day2:
+============================================
+Complete Control Statements
+How to pass input to method and how to get output from method
+Arrays
+String
+
+Control Statements:
+======================
+
+LearnJumpingStatements: (Stop the current iteration)
+======================================================
+
+for (int i=1; i<=5; i++){
+if(i==3)
+{
+	SYso("THree");
+	continue;
+	}
+	Syso(i);
+}
+}
+
+
+LearnBreaStatements: (Break  all the iteration)
+======================================================
+
+for (int i=1; i<=5; i++){
+if(i==3)
+{
+	SYso("Three");
+	break;
+	}
+	Syso(i);
+}
+}
+
+Learn Switch Statement
+=======================
+int day = 4;
+
+if (day ==1{
+Syso("Monday");
+}else if(day ==2){
+Syso("Tuesday");
+}else if(day==3){
+Syso("Wednesday");
+}else if(day==4){
+Syso("Thursday");
+}else if (day=5){
+Syso("Friday");
+} else{
+Syso("Weekend");
+}
+
+Switch case is alternate path for "if else" statement:
+====================================================
+int day=4;
+
+swithc (day){
+case 1: 
+	Syso("Monday");
+	break;
+case 2: 
+	Syso("Tuesday");
+	break;
+case 3: 
+	Syso("Wednesday");
+	break;
+case 4: 
+	Syso("Thursday");
+	break;
+case 5: 
+	Syso("Friday");
+	break;
+default: 
+	Syso("Weekend");
+	
+
+LearnWhileLoop:
+================
+int x=5;
+while (x<10){
+	Syso(x);
+	x=x+1;
+	}
+	
+LearndoWhileLoop:
+================
+
+int x=15;
+
+do{
+SYso(x);
+}
+while(x<10);
+
+
+Tips:Debug Mode
+================
+F5 - Execute Line by Line
+F8 - Execute and stope at Breakpoint
+
+How to pass input to method and how to get output from method:
+=================================================================
+Input to method should be passed using arguments
+
+ - want to load the application, I need the URL.
+ - DatatYpe of URL is string "https://www.amazon.ca"
+ 
+Arrays: Data Strucutre in Java to store multiple values in a single variable
+===============================================================================
+
+int x=10;
+int y=20;
+int[] nums = new int[6];
+int[] nums = {20,30,40,50,60}
+
+1. We have to declare the max limit at the declaration of the array - int[6]
+2. Size of the array cannot be changed at runtime - int[6]
+3. All the data in array must be saved as index based - nums[0], nums[1], nums[3], nums[4], nums[5]
+4. Always index starts with 0 - nums[0]
+
+To get the size of the array
+nums.length
+
+To find the last index
+int lastindex = (nums.length)-1
+
+To get the last data
+nums[lastIndex]
+
+for (inti-0; i< nums.length; i++)
+{
+Syso(nums[i])
+}
+
+for (int i=nums.lentght-1; i<0; i--)
+
+Sorting in ascending order
+Arrays.sort(nums);
+
+
+
+String: (Sequence of Characters)
+=========
+
+Literal String / String Constant Pool: 
+=====================================
+	- Effective memory usag
+	- String is a case sensitive
+
+//dataType variableName = "value"		
+String str1 ="Welcome";
+String str2 ="Welcome";
+
+Syso (str1 == str2);
+
+Syso(str1 == str3);
+Syso(str1.hashCode()); = to get the memory address
+Syso(str2.hashCode()); = to get the memory address
+Syso(str3.hashCode()); = to get the memory address
+Syso(str4.hashCode()); = to get the memory address
+
+
+New Keyword: Object related data will be stored in heap memory
+==================================================
+Address will be new and not the same in below example
+
+//Declare using new keyword
+String str3 = new String("Welcome");
+
+String str4 = new String ("welcome");
+
+Methods in String:
+String is a sequence of character -> Rach character is saved in an index
+Welcome
+W - [0]
+e - [1]
+l - [2]
+c - [3]
+o - [4]
+m - [5]
+e - [6]
+
+// to find the character in a string
+Syso(str1.length());
+
+//to find the last index
+String lastIndex =Syso(str1.length()-1);
+
+//to compare the 2 string values
+(str1.equals(str2));
+
+
+// compare 2 string and ignore the case sensitive
+str1.equalsIgnoreCase(str2);
+
+// to get the single character from String 
+Syso(str1.charAt(0));
+
+//
+Syso(str1.chartAt(str1.length()-1);
+
+for(int i=0; i<str1.lentght(); i++)
+{
+Syso(str1.chartAt(i));
+}
+
+
+
+package week1.day2.classroom.string;
+
+public class CharOccurance {
+	
+	public static void main(String[] args) {
+		// Check number of occurrences of a char (eg 'e') in a String
+		
+			String str = "welcome to chennai";
+
+			// declare and initialize a variable count to store the number of occurrences
+			
+			// convert the string into char array
+				
+			//get the length of the array
+				
+			// traverse from 0 till the array length 
+				
+				// Check the char array has the particular char in it 
+			
+				// if is has increment the count
+					 
+				
+				// print the count out of the loop
+					
+	}
+
+}
