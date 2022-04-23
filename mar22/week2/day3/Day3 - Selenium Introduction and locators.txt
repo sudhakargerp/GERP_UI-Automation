@@ -1,0 +1,156 @@
+Day2 - Selenium Agenda:
+========================
+1. Selenium Scripts
+	- To open the browser
+	- To load the application
+2. Understand DOM - TO know the element information
+3. How to locate the elements
+4. How to interact with elements using
+	- Basic locators
+5. How to interact with drop down element
+
+
+1. Selenium Introduction:
+======================
+Before 2004 Selenium (Se to the power of 34) is a chemical element
+	- Chemical element with atomic number 34
+	- Grey crystalline non-metal with semiconducting properties
+	- Increased dietary selenium intakes reduce the effects of mercury toxicity
+
+Selenium is an alternate or medicine or competitor for mercury
+Mercury is very poisonous
+Mercury Interactive company owned WinRunner, QTP, LoadRunner. Later Hp and currently microfocus is owning
+
+Selenium Projects
+	Selnium IDE - Firefox add-on that makes it easy to recor and playback tests in Firefox 2+ (This is not used in real time)
+	Selenium GRID - The API that allows tests on many servers at the same time, cutting down on the time.
+	Selenium WebDriver  - The API that can drive a browser natively either locally or remote machines
+	Selenium RC (Remote Control which was stopped after Selenium 2.0) - Client/server system that allows you to control web browsers locally or on other computers, using almost any programming language (Deprecated in Selenium 3.X onwards)
+
+	Selenium is meant for Web application automation. It interacts only with Web application automation (browser)
+	Currently the latest versoion is Selenium 4.0.0 - Beta-4
+
+Introduced 2004 - Jason Huggins - Thoughtworks Company
+2006 - Simon Stewart - Developed WebDriver
+
+What are the advantages of Selenium?
+
+	1) Open Source
+	2) Language Support
+	3) Works Across Multiple OS
+	4) Cross Browser Compatibility Testing
+	5) Supports Multiple Frameworks and Languages
+	6) Cross-Device Testing
+	7) Community Support
+	8) Easy to Implement
+	9) Add-ons and Reusability
+	10) Mouse Cursor and Keyboard Simulation
+	11) Leveraging the Code
+	12) Server Starting Not Required
+	13) Advanced Browser Interactions
+	
+
+2. How to setup your work environment?
+=========================================
+	- Open a Maven Project
+	- Update with the dependencies required in pom.xml (Project Object Model or POM)
+		 -How to add dependencies?
+			- Go to Maven repository - https://mvnrepository.com/
+			- Include the dependencies for 	a) selenium-java and 	b) webdriverManager in pom.xml
+	- Force update in case pom.xml throws an error
+	- How to take a code for system explorer?
+	
+READY TO CODE!!!!!
+
+3. Launch a website and interact with the WebElements
+	A brief look up on the HTML and its elements 
+	LOCATORS (8 Locators)
+	
+4. Sample aplication to start with demo.guru99.com
+
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+Pre-requisite: Add the Selenium and WebDriver Dependencies
+
+Selenium Architecture:
+SeleniumJavaCodes -> Rest API calls -> ChromeDriver.exe (local machine) which will help to access the Chrome Browser
+SeleniumJavaCodes -> Rest API calls -> SafarDriver.exe (local machine) which will help to access the Safari Browser
+SeleniumJavaCodes -> Rest API calls -> OperaDriver.exe (local machine) which will help to access the Opera Browser
+SeleniumJavaCodes -> Rest API calls -> FireFox.exe (local machine) which will help to access the Firefox Browser
+SeleniumJavaCodes -> Rest API calls -> Edge.exe (local machine) which will help to access the Edge Browser
+SeleniumJavaCodes -> Rest API calls -> IE.exe (local machine) which will help to access the IE Browser
+
+
+//Download the chromedriver.exe and set its path
+WebDriverManager.chromedriver().setup();
+ChromeDriver driver = new ChromeDriver();
+
+//Step 1: Load the URL
+driver.get("http://demo.guru99.com");
+Below access from demo.guru99.com is valid only for 20 days and generated on 20th Apr - UserID: mngr400975; Password: Ujypepy
+
+// Maximise your screen (Best practice)
+driver.manage().window().maximize();
+
+//locate the username and type
+driver.findElement(By.id("username")).sendKeys("Sudhakar");
+
+
+Tags in the DOM - application programming interface for HTML and XML document
+===============================================================================
+<input>
+<button> - Button
+<table> - Table
+<tr> - Table Row
+<td> - Table data
+<div> - Divider
+<a> - Anchor - Link Associated with this tag
+<span>
+<iframe> - Frame
+<img> - Image
+
+Structure of HTML ELements:
+================================
+1. Tag (Mandatory) - Pink
+2. Attributes - Orange
+3. Attribute value - blue
+4. text - black color
+
+Locators (8 Locators):
+=========================
+1. id - unique; should not have any numeric value or numbers
+2. name - unique; when i cannot go for id then go with name
+3. linkText (<a> is a hyperlink with text) 
+4. className - This should not have spaces i.e., if there is space ignore this locator and move to TagName
+5. tagName
+6. xpath
+7. CSS Selector
+8. partialLinkText
+
+Covered the element:
+1. TextField
+2. Button
+3. Dropdown
+4. Hyperlink Click
+
+To write a text into a textfield - sendKeys()
+To Get text from the web element - getText()
+To Get the title of a web page - getTitle()
+To Use few string operations - equals, replaceAll
+To handle the drop down web elements - 
+	locate the webElement
+	Associate the webElement with the Select Class
+	use best suited locators	
+		value, index and visibleText
+
+Locators identified today:
+1.id
+2.name
+3.linkText
+
+getTitle of the Page
+
+
+
+Assignment:
+http://demo.guru99.com/test/newtours/register.php
