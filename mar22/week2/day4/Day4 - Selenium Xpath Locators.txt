@@ -38,6 +38,13 @@ Two type of Xpath:
 	======================
 	Syntax: //tagName[contains(text(),'partial Text Value')]
 	
+	e) Starts With:
+	================
+	Id=” message12″
+	Id=” message345″
+	Id=” message8769″
+	Xpath=//tagName[starts-with(@id,'message')]
+	
 	
 	Collections Based Xpath (or) Index Based Xpath
 	===============================================
