@@ -17,7 +17,7 @@ Inherits properties from your parent. Inheriting the same characteristics of par
 
 Grand Parent - 2 properties
 Parent - 1 property (3 properties)
-Myself - 1 proerty (I will inherit my parent 1 property and my grand parent 2 properties) - 5 properties
+Myself - 1 proerty (I will inherit my parent 1 property and my grand parent 2 properties) - 4 properties
 
 - Parent / child relationship which is represented by keyword called extends
 - extends is the keyword used to setup the relationship between 2 classes
