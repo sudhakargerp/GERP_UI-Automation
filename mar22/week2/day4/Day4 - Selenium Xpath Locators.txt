@@ -37,6 +37,8 @@ Two type of Xpath:
 	d) Partial Text Xpath:
 	======================
 	Syntax: //tagName[contains(text(),'partial Text Value')]
+	//a[contains(text(),'SAP HR')]
+	
 	
 	e) Starts With:
 	================
@@ -52,7 +54,7 @@ Two type of Xpath:
 	Note: Index starts with 1
 	
 	a) Using the Item index: 
-	Syntax:(xpath)[index]
+	Syntgeax:(xpath)[index]
 	
 	b) Using Child Item index:
 	Syntax: (parent-xpath)/child-tagname[index]
@@ -76,7 +78,7 @@ Two type of Xpath:
 	(//label[@id='message18'])/preceding-sibling::input
 	
 	c) Younger Cousin:
-	Syntax: (xpath)/following::cousing-tagname
+	Syntax: (xpath)/following::cousin-tagname
 	(//a[text()='Software Testing'])/following::a[2]
 	
 	d)Elder Cousin:
@@ -108,3 +110,52 @@ Two type of Xpath:
 ImplicitylyWait:
 ===============	
 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+
+CSS Selector:
+=============
+
+CSS Selector is a pattern used to select the element(s) you want to stype (WebDevelopment) or to find the elements in HTML web page (web Automation-Selenium)
+
+5 Types of CSS Selector and 4 used in Selenium and 5 is used in Web Development
+
+CSS Simple Selectors
+	Used for finding the elements based on simple attributes (id and class)
+CSS Pseudo-class selectors
+	Used for finding the elements based on element location/position/indexes
+CSS Combinator selectors
+	Used for defining the relationship between elements in the html webpage
+CSS Attribute selectors
+	Used for finding the elements based on attribute and attribute values
+
+Tag and ID (OR) Tag#id (OR) #id Note: TagName is optional, 
+Tag and Class (OR) Tag.class (OR) .class Note: TagName is optional, 
+Tag and Attribute (OR) [attribute=value] Note: TagName is optional, 
+Tag, class and attribute Tag.class[attribue=value]
+
+driver.findElement(By.cssSelector("#email")).sendKeys("abc@gmail.com");
+driver.findElement(By.cssSelector(".className")).sendKeys("abc@gmail.com");
+driver.findElement(By.cssSelector("[attribute=value]"].sendKeys("abc@gmail.com");
+driver.findElement(By.cssSelector("Tag.className[attribute=value]"].sendKeys("abc@gmail.com");
+
+//current html tag[@attribute='value']/following-sibling::siblingTag[@attribute='value']
+//current html tag[@attribute='value']/preceding-sibling::siblingTag[@attribute='value']
+//*[@attribute='value']/ancestor::tagName
+//*[@attribute='value']/descendant::tagName
+
+
+CSS VS Xpath
+==============
+performance
+User Friendliness
+ElementIdentification
+
+			1Ancestor
+			
+precending2	3parent		4following
+	
+	5	6	self	7	8
+	
+9	10		11child		12	13
+	
+	14	15	16descendent			17	18
