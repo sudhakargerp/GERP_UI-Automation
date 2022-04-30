@@ -1,0 +1,190 @@
+Week2 - day1:
+=============
+Java OOPS (object oriented programming)
+
+Class
+Objects
+Inheritance
+Polymorphism (many forms)
+Abstraction
+Encapsulation
+
+Access Specifiers
+
+Inhertiance:
+=============
+Inherits properties from your parent. Inheriting the same characteristics of parent.
+
+Grand Parent - 2 properties
+Parent - 1 property (3 properties)
+Myself - 1 proerty (I will inherit my parent 1 property and my grand parent 2 properties) - 5 properties
+
+- Parent / child relationship which is represented by keyword called extends
+- extends is the keyword used to setup the relationship between 2 classes
+
+- Parent Class / Super Class / Base Class
+- Child Class / Sub Class / Derived Class
+
+ChildClass extends ParentClass
+
+
+					Vehicle				(applyBrake, soundHorn)
+			
+			Car		(airConditioner)		Auto	(handStarter)
+			
+	BMW			Audi				Bajaj
+	
+
+Advantage of Inheritance:
+1) Reusability
+2) Less memory space
+
+Properties of Inheritance:
+- Object of child class can access all the properties of parent class and child class
+- Object of Parent class can access only the propoerties of parent class. It cannot access the properties of child class
+
+One class extends another class - Single Ineheritance (One Child One Parent)
+One class extends multiple class - Multilevel Inhertiance (One child One Parent and One Grand Parent)
+
+Multiple Inheritance is not applicable in class
+Example:
+
+Class A (airConditioner)			Class B (airConditioner)
+
+Class C extends Class A, Class B
+C classesC = new C();
+clasesC.
+
+Note: Function F4 will help to view the Hierarchy of the Parent and Child class
+
+
+Assignment 1:
+Create 3 classes
+- Mobile (methods: sendMsg, makeCall, saveContact), AndroidPhone (takeVideo), SmartPhone (connectWhatsApp)
+- AndroidPhone extends Mobile and SmartPhone extends AndroidPhone
+- Create MyPhone class for execution and call all the methods using object (create object for SmartPhone)
+
+
+AccessSpecifiers:
+=================
+public
+protected
+default
+private
+
+public - Global level access ( inside package (extends, objects) + outside package (extends, objects) with import
+
+Protected - (inside Package (extends, objects) + outside package (extends))
+
+default - Package level access (extends, object), outside the package we can not access default method
+
+private
+
+Public:
+Class Park
+Class MyNeighbor
+Class MyFamily
+Class UnkownPeople
+
+
+Protected:
+Class MyNeighbor
+Class Relative
+Class UnkownPeople (Not Allowed as they are not related)
+
+default:
+
+
+Private:
+Class MyFamily (Bedroom)
+Class MyNeighbor extends MyFamily (Not allowed to access Bedroom)
+
+
+
+Polymorphism:
+==============
+More than one forms
+Poly: Many
+morphism: Forms
+
+Method overloading/static binding/compile time:
+====================
+Class Name: Self (all methods in the same class)
+method name: same
+Arg: Differ
+
+Depends on the data type
+Depends on the datatype count
+Depends on the datatype order
+
+Method overriding/Dynamic binding/Runtime:
+===========================================
+Class Name Differ (same methods in different class - inheritance)
+method name: same
+Arg: same
+
+
+Assignment2 :Method Overloading Assignment:
+Create class calculator  with the below methods
+- 2 methods for add, 1 method with 2 int args, 1 method with 3 int args
+- 2 methods for multiply, 1 method with 2 int args, 1 method with 1 int and 1 double args
+- 2 methods for subtract, 1 method with 2 int args, 1 method with 2 double args
+- 2 methods to divide, 1 method with 2 int args, one to divide one double number with one int
+create object for calculator class and execute all the methods
+
+
+Assignment3 :Method Overriding Assignment:
+Creat the same method(takeVideo) in Android Phone and Smart Phone and execute takeVideo method using ChildClass Object
+
+More String method:
+====================
+/* length() -> to find the number of characters in the string
+equals() -> to compare 2 string values (case sensitive)
+equalsIgnoreCase() -> to compare 2 string values (ignoring case sensitive)
+chartAt() -> to get single character from String
+char[] ch = input.toCharArray() -> convert the string to character Array
+
+String input = "Welcome";
+String newInput = "Home";
+String newInput = input+newInput -> can be used for 2 different data type
+input.concat(newInput) -> cannot be used for 2 different data type
+input.contains(newInput);
+(input.toUpperCase()); -> to convert in to upper case
+(input.toLowerCase()); -> to convert in to lower case
+input.replace('e', 'x');
+input.replace("Wel", "Be");
+input.replaceAll("[0-9]", "");  -> regular expression
+input.split(" "); -> Split each string and return type would be array
+*/
+
+Abstraction: Hiding the implementation to the user
+Inteface - Full Abstraction - used to design the software / framework
+Abstract Class - Partial 
+
+Interace - All the methods are unimplemented method (only method signature will be there, no method implementation)
+- In Interface All the methods are public abstract
+- abstract means unimplemented
+- we cannot have private abstract
+- We cannot create object for interface
+
+
+Abstraction:
+==============
+What is abstraction: Hiding the implementation details. 
+
+
+ - Interface - Full Abstraction
+ - Abstract Class - Partial Abstraction
+
+What is an Interface? API is an interface. In Java Interface is used to design the framework.
+Example: 
+
+Understanding the interface concept:
+- All the methods in the interface are unimplemented methods (only method signature exist and no implementation)
+Ex: void fixedDeposit();
+- By default all the methods are public abstract so you dont need to declare public for a method.
+
+Note: We cannot have private or protected abstract or method within the abstract
+
+- Abstract means unimplemented
+- If there is a interface, it should be implemented in a class
