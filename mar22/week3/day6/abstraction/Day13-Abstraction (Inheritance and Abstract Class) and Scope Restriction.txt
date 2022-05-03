@@ -1,0 +1,68 @@
+Week3 - day2:
+=============
+
+Abstraction:
+==============
+What is abstraction: Hiding the implementation details. 
+
+Car - Know how to drive the car but I do no the internal detail of the car. If any problem I will not know how to fix but comfortably able to drive the car. Car mechanic be able to fix it.
+
+ - Interface - Full Abstraction
+ - Abstract Class - Partial Abstraction
+ 
+ Plot & Budget, you go to architect to build the plan (Design) for house with the requirement for house (2BHK, Kitchen, Balcony, etc)
+ Without plan we can build the house, say small house. If you want to build a proper house you need plan (design).
+ In Java, Interface is used to design the framework.
+
+What is an Interface? API is an interface. In Java, Interface is used to design the framework.
+Example: 
+
+RBI -> Reserve Bank of India (Regulatory Body for all the bank in India) - Bank of Banks - Give the guidenlines for all the Bank
+
+To understand interface Concept:
+=================================
+
+In IDE, New -> Interface
+
+void fixedDeposit(); 
+{} - Body of the method / Implementation which is not there in Interface method
+
+Properties of Interface:
+========================
+- All the methods in the interface are unimplemented methods (only method signature exist and no implementation)
+Ex: void fixedDeposit();
+void savingsAccount();
+
+public abstract void fixedDeposit();
+
+- By default all the methods are public abstract so you dont need to declare public for a method.
+
+Note: We cannot have private or protected abstract or method within the abstract
+
+- Abstract means unimplemented
+- If there is a interface, it should be implemented in a class
+
+Excercise:
+============
+Class IOB implements RBI (Implements is the keyword for Interface)
+
+Selenium WebDriver -> To automate Web Application
+
+Chrome -> ChromeDriver (Google)
+Edge -> EdgeDriver (Microsoft)
+Firefox -> FirefoxDriver (Mozilla)
+IE - IEDriver - Created by Selenium community
+Safari -> SafariDriver (Apple)
+
+to load -> get
+to locate -> findElement
+To enter value -> sendKeys
+
+Class A implements RBi, CIBIL(){
+
+implement all the method - Multiple Inheritance
+}
+
+
+Scope Restriction:
+==================
