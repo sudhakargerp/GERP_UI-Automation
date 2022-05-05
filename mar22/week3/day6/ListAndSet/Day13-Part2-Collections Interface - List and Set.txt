@@ -1,0 +1,109 @@
+Continuing some more Java for the upcoming Selenium topics which is required:
+
+Array:
+
+What are the disadvantages of array? What are the properties of Array
+
+Size should be pre-defined and it cannot increased or decreased during runtime..
+
+Example: ShoeRack in home - 4 family members, each has 4 shoes - Total 16 pairs of shoes.. We cannot increase or decrease the size during run time and this can be addressed by Collection.
+
+Single Dimensional Array: Below Interfaces are types of Single Dimensional Array
+List:
+	What is the Properties of List:	
+	a) List allows duplicate values
+	b) List Maintains the insertion order (First In First Out - FIFO)
+Example: Students = Nur, Faisal, Ami, Amisha, Ritu, Sudhakar, Nur
+		Course = Testing, SAP, BA	
+	
+Set:
+	What is the Properties of Set:
+	a) Set does not allow duplicate (or) set allows only unique value
+	b) Set may or may not maintain the insertion order
+
+Example: Students = Nur, Faisal, Ami, Amisha, Ritu, Sudhakar, Ritu
+
+
+Two Dimensional Array: Below Interface is a Two Dimensional Array
+Map - This is not used much in Selenium
+
+
+						Collections is an Interface (I)
+		(If there is an Interface there should be an implementation class)	
+			All the methods are unimplemented method
+		
+	1) List (Interface) extends Collection					2) Set (Interface) extends Collection
+		
+	Implementation Class of List Interface is:				Implementation Class of Set 
+	a)ArrayList implements List								a)HashSet
+	b)LinkedList implemennts List							b)LinkedHashSet
+															c)TreeSet
+Note:
+=======
+Class extends Class
+Interface extends Interface
+Class implements Interface
+
+<> angular bracket is called generic. generic will not allow primitive data type i.e., int, double, char, 
+For each primitive dataType there is a wrapper class available
+
+Primitive Type		Wrapper Class
+==============		==============
+boolean				Boolean
+char				Character
+byte				Byte
+short				Short
+int					Integer
+long				Long
+float				Float
+double				Double
+															
+For LinkedList 
+ - As a user I will not see any difference in the output
+ - Backend (How the memeory is stored) there is a difference
+ - ArrayList stores the data sequentially in the index
+ - LinkedList stores the data based on the head and tail
+ 
+
+Array List:
+==============
+-Mostly used List in realtime
+-Objects are stored as dynamic array with index
+-Faster to fetch objects (faster when compared to LinkedList)
+-Slower for data insert and delete (compared to LinkedList)
+-non synchronized (faster when compared to Vector)
+
+LinkedList:
+===========
+-Store values in doubly linked list data structure
+-Slower to Fetch Objects (compared to ArrayList)
+-Faster for data insert and delete (compared to ArrayList)
+
+1.Difference between ArrayList and Linked List?
+ArrayList:Array is a collection of elements having same data type with common name. In array, elements are stored in consecutive/sequential manner in memory.Insertion & deletion takes more time in array as elements are stored in consecutive memory locations. 
+
+In array, memory is allocated at compile time i.e, Static Memory Allocation. Array can be single dimensional, two dimension or multidimensional.In array, each element is independent, no connection with previous element or with its location.In array, no pointers are used like linked list so no need of extra space in memory for pointer.
+
+Linked List: Linked list is an ordered collection of elements which are connectted by links/pointers.In linked list, elements can’t be accessed randomly but can be accessed only sequentially and accessing element takes 0(n) time.In linked list, elements can be stored at any available place as address of node is stored in previous node.In linked list, memory is allocated at run time i.e. Dynamic Memory Allocation.Linked list can be singly, doubly or circular linked list.In Linked list, location or address of elements is stored in the link part of previous element/node. In linked list, adjacency between the elements are maintained using pointers or links, so pointers are used and for that extra memory space is needed.
+
+2. What is the difference between length of array and size of ArrayList in Java?
+ArrayList doesn't have length() method, the size() method of ArrayList provides the number of objects available in the collection.
+Array has length property which provides the length or capacity of the Array. It is the total space allocated during the initialization of the array.
+
+3. What are the classes implementing List and Set Interface?
+
+Classes Implementing List:
+1.	ArrayList
+2.	LinkedList
+3.	Vector
+
+
+Classes Implementing Set:
+1.	HashSet
+		Properties: - HashSet will not maintain the order
+2. 	LinkedHashSet
+		Properties: - LinkedHashSet will maintain the order
+3.	TreeSet
+		Properties: TreeSet will maintain the Ascending or ASCII order
+
+Copy the Set data in to List

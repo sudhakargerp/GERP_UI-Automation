@@ -1,0 +1,119 @@
+
+Assignment1:
+============
+package week3.day2.classroom;
+
+public class ErailSort {
+
+	public static void main(String[] args) throws InterruptedException {
+//		Launch the browser
+		
+//		Launch the URL - https://erail.in/
+		
+//		Uncheck the check box - sort on date
+		
+//		clear and type in the source station 
+		
+//		clear and type in the destination station
+		
+//		Find all the train names using xpath and store it in a list
+		
+//		Use Java Collections sort to sort it and then print it
+		
+	}
+
+}
+
+Assignment 2:
+==============
+package week3.day2.classroom;
+
+// Input: "PayPal India"
+// Output:PaylIndi
+
+public class RemoveDuplicates {
+
+	public static void main(String[] args) {		
+		
+//		Declare a String as PayPal India
+
+//		Convert it into a character array
+
+//		Declare a Set as charSet for Character
+
+//		Iterate character array and add it into charSet
+
+//              Check whether the character is space, if not add to charSet 
+
+//		Iterate using charSet
+
+//		print each character for charSet
+
+	}
+
+}
+
+Assignment 3:
+==============
+package week3.day2.classroom;
+
+public class SortingUsingCollection {
+
+	public static void main(String[] args) {
+
+		String[] input = {"HCL","Wipro","Aspire Systems","CTS"};
+//		Declare a String array and add the Strings values as (HCL, Wipro,  Aspire Systems, CTS)		
+
+//		get the length of the array		
+
+//		sort the array			
+
+//		Iterate it in the reverse order
+
+//		print the array
+		
+//		Required Output: Wipro, HCL , CTS, Aspire Systems
+
+	}
+
+}
+
+Assignment4:
+================
+package week3.day2.classroom;
+
+public class VerifyTrainNamesAreUnique {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+//		Set the system property and Launch the URL
+		
+//		Click the 'sort on date' checkbox
+		
+//		clear the existing text from station text field
+		
+//		type "ms"in the from station text field
+		
+//		tab in the from station text field
+		
+//		clear the existing text in the to station text field
+		
+//		type "mdu" in the to station text field
+		
+//		tab in the to station text field
+		
+//		Add a java sleep for 2 seconds
+		
+//		Store all the train names in a list
+		
+//		Get the size of list
+		
+//		Add the list into a new Set
+		
+//		Get the size of set
+
+//		Compare the Size of list and Set to verify the names are unique
+
+	}
+
+}
