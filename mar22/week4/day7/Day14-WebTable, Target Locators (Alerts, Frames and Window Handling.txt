@@ -1,0 +1,114 @@
+Selenium - WebTable:
+=======================
+WebTable has WebElement <table> --> <tbody> --> <tr> <th>  --> <tr> <td>
+
+Do hands on practice using the webelements in the below website:
+https://chercher.tech/practice/
+https://chercher.tech/practice/frames-example-selenium-webdriver
+
+Find the WebTable
+From WebTable, get the tableRows (Multiple Row)
+Get into each tableRow
+Get in to all tableData (Multiple Columns)\
+Get the data of each Column
+From the TableRows access one of the TableRow by index value (get(0))
+From The TableRow, access the table Column
+
+Steps for WebTable:
+====================
+1. Find the WebTable
+2. Create the instance of driver
+3. driver.table
+4. WebElement tableRow = table.tablerow
+5. WebElement tableCol = tableRow.tableColumn
+
+Alert:
+=======
+get("https://demo.guru99.com/test/delete_customer.php")
+Practice WebSite: http://the-internet.herokuapp.com/javascript_alerts
+
+	Two Types of Alert:
+	a) Window based popup
+	b) Web based popup
+	
+		i) Modal dialog:
+		=================
+			Within the webpage dialog box appears and it is part of the HTML page - webelement
+					
+			Properties:
+			We cannot inspect (unable to view inspect on right click)
+			We cannot interact with the main page until you handle the alert message
+			Alerts are written in JavaScript (not HTML)
+			
+			1) Simple Alert - 
+				OK button - accept();
+				Get the Text value - getText();
+			2) Confirmation Alert - 
+				Ok - accept(); 
+				cancel - dismiss();
+				Get the Text value - getText()
+			3. Prompt Alert
+				Ok - accept(); 
+				cancel - dismiss();
+				Get the Text value - getText()
+				Enter text - sendKeys()
+				
+			driver.switchTo()
+			
+Alert Exception:
+===================
+//Trying to interact with the alert that is not currently active
+NoAlertPresentException
+
+//Alert is still alive. But I try to access the main webpage window
+UnhandledAlertException
+
+
+		ii) Non Modal dialog (Sweet Alert)
+		This will be handled as a normal webelement
+			Dialog box generated through Java Script and it is not associated to the webpage
+			https://www.w3schools.com/howto/howto_css_modals.asp
+				Practice URL: http://www.ibloger.net/assets/demos/sweetalert/example/index.html
+				https://sweetalert2.github.io/
+
+Frame:
+=======
+Practice website: https://chercher.tech/practice/frames-example-selenium-webdriver
+
+Dom inside a DOM
+
+How to identify a frame is present?
+1) Look for iframe or frame tag in the DOM
+2) Inspect the element
+
+How does it appear in DOM?
+1) <iframe> - inline frame (floating frame)
+2) <frame> - static frame / immmovable
+
+How to access the frame?
+1. Select the frame by index
+2. Select the frame by atrribute (id or name)
+3. Select the frame by Xpath
+
+driver.switchTo().frame();
+
+	
+Assignment:
+============
+https://w3schools.com/js/tryit.asp?filename=tryjs_confirm
+Click Try It Button
+Click OK/Cancel in the alert
+Confirm the action is performed correctly by verifying the text !!
+
+Hint:
+======
+Switch to the frame
+Then Click Try It with the xpath
+Switch to the alert
+Then perform accept/dismiss
+Get the text using id
+Verify the text based on the actions
+
+
+
+
