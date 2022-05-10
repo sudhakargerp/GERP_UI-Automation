@@ -1,0 +1,263 @@
+Suppressing the browser notification
+WindowHandling
+Screenshot using Selenium
+Advanced user interactions - AUI (Actions Class)
+
+Suppressing the browser notification:
+=========================================
+
+To verify oldnavy notification and update team
+
+	ChromeOptions chromeOptions = new ChromeOptions();
+	//FirefoxOptions options = new FirefoxOptions();
+	//suppress the browser notification by argument "--disable-notifications"
+	chromeOptions.addArguments("--disable-notifications");
+	
+	ChromeDriver driver = new ChromeDriver(chromeOptions);
+	driver.get("https://www.airship.com/resources/explainer/web-push-notifications-explained/");
+	driver.manage().window().maximize();
+
+WindowHandling:
+==================
+Need to get the reference of windows in the browser
+How to get the reference of windows?
+====================================
+This can be achieved by 2 methods:
+a) getWindowHandle(); -> reference of the current window (driver.getWIndowHandle())
+b) getWindowHandles(); -> reference of all the window (driver.getWIndowHandles())
+
+First Execution Window reference: CDwindow-6C4974947455D85F5293AFE2C5FEC299
+
+								CDwindow-417B1E4786CAD73A798C1A2F26057AC2, CDwindow-312D0C3AAF1C6EF94052B958A52A5647
+
+								CDwindow-1BCE9B2E44C96E042B4FF0C40D1C9470, CDwindow-C4263898D43F0E7A953AC3A8222E3F52
+								  
+
+
+Steps to access the window / windows:
+======================================
+Step 1: With the above 2 methods we can get reference of one or two windows
+Step 2: Switch to the reference window that need to be accessed and continue automation  - driver.switchTo().window(reference)
+
+WindowHandling Assignment:
+===========================
+1. Navigate to https://www.irctc.co.in/nget/train-search
+2  Click Ok on the Alert
+3. Click on Flights
+4. Switch to the New Window
+5. Read the text from "Flights@irctc.co.in" WebElement and print it in the console
+6. Take the screen shot of the Window
+6. Close the new window alone
+7. Print the Title of First window
+
+Screenshot using Selenium:
+===========================
+Step 1: To take the screen shot we need to get the source ScreenShotAs Output File
+Step 2:Create a Target File
+Step 3: Copy the source to Target
+
+//Step 1: Get the source screen shot as output file
+File sourceScreenShot = driver.getScreenshotAs(OutputType.FILE); // screenshot of whole browser
+File sourceScreenShot = findElement.getScreenshotAs(OutputType.FILE);// screenshot of web element
+
+//Step 2: Create a Target File
+File targetScreenShot = new File("./snap/element.png")
+		
+//Step 3: Create a Target File
+FileUtils.copyFile(sourceScreenShot, targetScreenShot);
+
+Advanced User Actions:
+========================
+WebSite for Advanced User Interactions (or) Frames
+===================================================
+jqueryui.com
+https://www.snapdeal.com/
+myntra.com
+
+Keyboard Methods:
+==================
+sendKeys(keysToSend) : sends  a series of keystrokes onto the element
+keyDown(theKey): Sends a key press without release it. Subsequent actions may assume it as pressed. (For Selectable)
+keyUp(theKey): Perform a key release (For Selectable)
+
+Mouse Actions:
+===============
+click(): Simple click on a element
+moveToElement(toElement): It shifts  the mouse to the center of the element (For Mouse over)
+doubleClick(): Double Clicks on a Element
+contextClick(): Right click on a element
+clickAndHold(): Clicks at the present mouse location (without releasing) (for Sortable)
+dragAndDrop(source, target): Invokes click-and-hold at the source location and moves to the location of the target
+dragAndDrop(source, xOffset, yOffset): Invokes click-and-hold at the source location and moves to the location of the target
+
+release(); Release the pressed left mouse button at the existing mouse location
+
+TestNG:
+=======
+Installation of TestNG if it does not exist:
+Install from update site
+Select Help / Install New Software...
+Enter the update site URL in "Work with:" field:
+Update site for release: https://testng.org/testng-eclipse-update-site.
+Make sure the check box next to URL is checked and click Next.
+Eclipse will then guide you through the process.
+
+Steps below for installation:
+=============================
+Help -> Install New Software -> Add
+Name: TestNG
+https://testng.org/testng-eclipse-update-site/7.4.0/
+Select the check box, Click Next and Finish the installation
+
+
+1) TestNG is use to Execute the Selenium TestScript
+2) TestNG It is Test execution Framework
+
+Features of TestNG:
+1) TestNG will provide the test result  for the execution
+2) Will provide the automation summary report
+3) Can able to exdecute Multiple TC's in parallel
+4) Can able to exdecute Multiple TC's in Sequental
+5) Support data parametrization for test cases to run with different set of data
+6) Retry the failed test cases
+7) Can able to control the execution using TestNG annotation and attributes
+8) We can categorize test cases usinig groups (Functional, Smoke, Regression test script)
+9) TestNG provides assertion for verification and validation
+
+Steps to convert a normal Selenium test script in to TestNG test cases:
+========================================================================
+
+1. Change the main method in to normal method
+	- Remove the static keyword
+	- Change the method name 'main'
+	- Remove String args in the method
+	
+2. Apply @Test on top of the method, then the method is considered as TestNG TC.
+
+
+verbose value range is 0 to 10. verbose attribute is used to have the detailed failure log.
+Default value of verbose is 2
+
+TestNG Annotations:
+======================
+
+@Test - Mandatory Annotation
+All other Annotations are optional
+
+Below is the order of execution for TestNG Annotations:
+==========================================================
+@BeforeSuite
+	@BeforeTest - Group of Test Cases
+		@BeforeClass - Each Test Case
+			@BeforeMethod
+				@Test
+			@AfterMethod
+		@AfterClass
+	@AfterTest
+@AfterSuite
+
+Precondition():
+@BeforeSuite		- Cloud Connection / Start report
+	@BeforeTest		- DB Connection
+		@BeforeClass - Setup the testcase Information
+			@BeforeMethod - Invooke Chrome Browser
+			
+PostConditions():
+@AfterMethod - Close the Chrome Browser
+		@AfterClass - Close  the testcase Information
+	@AfterTest - Close the DB Connection
+@AfterSuite - Close the cloud connectivity and send email report
+
+
+======================================
+@BeforeSuite-1
+@BeforeSuite-2
+	@BeforeTest - 1
+	@BeforeTest - 2
+		
+		@BeforeClass - 1
+			@BeforeMethod - 1
+				@Test - 1 ((Priority =2)
+			@AfterMethod - 1
+		@AfterClass - 1
+		
+		@BeforeClass - 2
+			@BeforeMethod - 2
+				@Test - 2 (Priority =1)
+			@AfterMethod - 2
+		@AfterClass - 2
+		
+	@AfterTest - 2
+	@AfterTest-1
+@AfterSuite-2
+@AfterSuite-1
+============
+
+Test Case 1 - Before Class 1
+Test Case 1 - Before Method 1
+Test Case 1
+Test Case 1 - Before Method 1
+Test Case 2 - Before Class 2
+Test Case 2 - Before Method 2
+Test Case 2
+Test Case 2 - Before Method 2
+
+==============
+
+@Test (Priority):
+=================
+Default value of Priority is 0
+Priority value is integer hence it can range from -2,147,483,648 to 2,147,483,647
+If the Priority is default or not defined (which is default) then the priority of execution is in ASCII order
+
+@Test (invocationCount): 
+===========================
+Number of time the test case to be executed
+default value of InvocationCount = 1
+Value can be from 1 to any valid positive number
+
+@Test (enabled):
+=================
+Default value of enabled is true
+If the enabled is false then that particular TestNG method will be ignored
+
+@Test (dependsOnMethods = "parentClass"):
+==============================================
+If the parent class fails then the child class which depends on Parent class will get skipper.
+Result: 1 Failed and 1 Skipped, out of total 2 test case
+
+Parametrization:
+================
+
+When we have more than one data then we parametrize.
+
+Static Parametrization:
+========================
+
+Dynamic Parametrization:
+=========================
+Data specific to a test case
+Dynamic parametrization run multiple data for a test case
+This can be achieved by @Test (dataProvider)
+
+How to read data from Excel:
+==============================
+- Selenium can only interact web browser / web application
+- In this case selenium cannot interact with excel
+
+ApachePOI is the popular library which is used to integrate with all the Microsoft application whichs includes excel (.xls, .xlsx)
+
+Below dependency to be added in the POM.xml
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.1.0</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.1.0</version>
+</dependency>
+
+Step1: Create dataFolder under Maven Project folder. Create .xlsx file with the data included and copy past the file in to data folder.
+Step2: Create a Class cass ReadExcel
