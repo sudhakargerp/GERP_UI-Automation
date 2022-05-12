@@ -1,0 +1,71 @@
+Advanced User Actions:
+========================
+WebSite for Advanced User Interactions (or) Frames
+===================================================
+jqueryui.com
+https://www.snapdeal.com/
+myntra.com
+
+Keyboard Methods:
+==================
+sendKeys(keysToSend) : sends  a series of keystrokes onto the element
+keyDown(theKey): Sends a key press without release it. Subsequent actions may assume it as pressed. (For Selectable)
+keyUp(theKey): Perform a key release (For Selectable)
+
+Mouse Actions:
+===============
+click(): Simple click on a element
+moveToElement(toElement): It shifts  the mouse to the center of the element (For Mouse over)
+doubleClick(): Double Clicks on a Element
+contextClick(): Right click on a element
+clickAndHold(): Clicks at the present mouse location (without releasing) (for Sortable)
+dragAndDrop(source, target): Invokes click-and-hold at the source location and moves to the location of the target
+dragAndDrop(source, xOffset, yOffset): Invokes click-and-hold at the source location and moves to the location of the target
+
+release(); Release the pressed left mouse button at the existing mouse location
+
+
+Synchroniztion:
+================
+
+pageLoadTImeout(20, TimeUnit.SECONDS)
+implicitylyWait // 
+a)applied globally - is available for all the webelements where driver is interacting
+b)dynamic in nature
+c)it can be changed anywhere and at any time in your code
+
+//Explicit Wait: 
+a)No expliocity keyword or method
+b)available with WebDriverWait with some ExpectedConditions
+c)specific to element
+e)dynamic in nature
+
+
+
+public static void sendKeys(WebDriver driver, WebElement element, int timeout, String value)
+	{
+		new WebDriverWait(driver, timeout)
+		.until(ExpectedConditions.visibilityOf(element));
+		element.sendKeys(value);
+	}
+	
+
+We should never use implicit Wait and explicit wait together because selenium WD will wait for the element first because of IMPLICICT WAIT and then EXPLICIT WAIT will be applied, hence total sync wait will be increased for each element
+
+Thread.sleep() - It will sleep time for script, not good way to use in script as it's sleep without condition
+
+Fluent wait:
+============
+Fluent wait is smarter than explicit wait
+// Waiting 30 seconds for an element to be present on the page, checking
+// for its presence once every 5 seconds.
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+  .withTimeout(Duration.ofSeconds(30))
+  .pollingEvery(Duration.ofSeconds(5))
+  .ignoring(NoSuchElementException.class);
+
+WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+  public WebElement apply(WebDriver driver) {
+    return driver.findElement(By.id("foo"));
+  }
+});
