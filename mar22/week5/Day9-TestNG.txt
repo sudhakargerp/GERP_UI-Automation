@@ -1,0 +1,100 @@
+TestNG - TestNG is an Execution Framework to execute the test cases.
+
+Junit - It is also a framework for test execution, used by the developers for unit test
+Father of TestNG is Junit. Many features are developed and included in the TestNG.
+
+Official TestNG website: https://testng.org/doc/
+
+TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that makes powerful and easier to use, such as:
+
+1. TestNG will provide test results for the execution
+2. It will provide the automation summary report (html format)
+3. Can be able to execute multiple test cases sequentially
+4. Can be able to execute multiple test cases in parallel
+5. It supports data parametrization for test cases to run with different set of data
+6. Retry running the failed test cases
+7. Can able to control the test execution using TestNG annotations (@Test) and attributes
+8. We can categorize test cases using group (Smoke, Regression, Functional)
+9. TestNG provides assertion for veification (Compare 2 values and verify the expected and actual are same) and validation
+
+TestNG Feature (Tips):
+1. Test Execution Results
+2. Test Summary Report
+3 and 4. Multiple TC executing sequentially and parallely
+5. Data Parametrization
+6. Retry Failed TC'same
+7. Control Test Execution using Annotationa and Attributes
+8. Categorization of groups
+9. Asertion for verification and validation
+
+Steps to convert a normal Selenium test script in to TestNG test case:
+=======================================================================
+1. Change the main method in to normal method
+		- Remove the static keyword
+		- Change the method name 'main'
+		- Remove String args in the method
+		
+2. Apply @Test on top of the method, then the method is considered as TestNG TC, import TestNG package
+3. To Execute - Right click the file  and run as TestNG Test
+4. In the console you will find the Test Result summary with passed and failed count and status
+
+thread-count Attribute - will invoke the defined number of browsers /test at the same time
+Example: thread-count=2; parallel="classess" - 2 browser/test are invoked and executed at a time. If one of them gets completed the the 3rd test case gets executed
+
+Tags in TestNG:
+===================
+<suite> - We can have multiple Test Set - Smoke Test, Regression, Functional
+  <test> - can have one or multiple  test cases of Smoke Test, Regression, Functional ||  Module Name: User Authentication, Order Management, Reports & Graphs
+    <classes> - can have multiple class i.,e  class of test
+      <class name="mar22.week5.day9.TestNG.LearnLoginTestNG"/> - test case
+      <class name="mar22.week5.day9.TestNG.LearnDragAndDropBy"/>
+      <class name="mar22.week5.day9.TestNG.LearnMoveToElement"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+Attribute of the tags in TestNG:
+===================================
+
+name="Suite" ->name - TestSetName  - (Smoke Test, Regression and Functional)
+thread-count="2" (possible interview question) - default value of theeady count is 5. will invoke the defined number of browsers /test at the same time when the classess is defined parallely
+parallel="classes" - Multiple class will run parallely (possible interview question)
+name="Test" - Name of the Test 
+class name - Test Case name
+(possible interview question) verbose="5" - Default value of verbose is 2. This attribute is used to capture the failure detail in the consolde i.e., error details - null pointer exception, no such element exception.
+Valid Value of Verbose can be 0 to 10.
+For Testng we can have the verbose set to 5 which will capture enough detail about the error that failed
+Verbose with value above 5 may be useful for development team
+
+TestNG Annotations:
+=======================
+@Test - It is treated as TestNG Test case and it is a mandatory annotation - Possible interview question
+All other annotation are optional
+
+STCM - Suit, Test, Class and Method
+
+Below is the order of TestNG annotation execution:
+====================================================
+@BeforeSuite - Connect to the cloud / start report
+	@BeforeTest - DB Connection / test details
+		@BeforeClass - Setup the test case information
+			@BeforeMethod - (precondition) - Launch the browser and Load the URL
+				@Test (Mandatory)
+			@AfterMethod  - (post condition) - Close the browser
+		@AfterClass
+	@AfterTest - Closing the DB Connection
+@AfterSuite - Closing the connection to the cloud or Sending emails
+
+@BeforeMethod - precondition of the Test
+@AfterMethod  - postcondition of the Test
+
+
+This is Before Suite Annotation
+This is Before Test Annotation
+This is Before Class Annotation
+This is Before Method Annotation
+This is my first TestNG class Test
+This is After Method Annotation
+This is After Class Annotation
+This is After Test Annotation
+This is After Suite Annotation
