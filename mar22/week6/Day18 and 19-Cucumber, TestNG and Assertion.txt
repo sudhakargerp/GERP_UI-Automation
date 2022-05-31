@@ -1,0 +1,181 @@
+ReadDataExce -> ExcelWorkbook DataProvide ->Pass the data
+
+Cucumber - Automation Framework to support BDD
+
+BDD: Behavior driven development
+----------------------------------
+- Development Process / Approach
+
+In Waterfall methodology, what are the possible impacts.
+When we identify lot of defects at the end of the project
+	- Rework will be high
+	- Lot of time will be increased
+	- Cost of the project will be increased
+	
+Currently many companies are adoping Agile Methodology.
+
+Reason for many defects during testing:
+=======================================
+1. Poor Requirement
+2. Poor coding
+3. Invalid defect (misunderstanding of the requirement, communication gap)
+
+Management want to have clear understand by the developer and tester. For this they came out with the approach call TDD - Test Driven Development.
+
+TDD - Test Driven Development:
+------------------------------
+- Write the test case first, software will be developed based on the test cases
+Whole team review the TC's first and developer will develop the software based on test cases, this way the number of defect can be reduced / contain the defect. Once the test case is frozen, reviewed and approved.
+
+When they reviewed TDD, They found lot of negative scenarios were covered in TDD. TO focus on positive scenarios they came out with ATDD - Acceptance Test Driven Development
+
+ATDD:
+-------
+- Write the acceptance Test Cases first (Product Owner/ UAT team / BA writes the acceptance test case) - These people are non technical people and they do no the language used for development.
+- Review and approve the test cases
+- software will be developed based on the acceptance test cases who is technical people
+
+The language used by the non technical people are not clearly understand by the technical people - So the problem here is there was a communication gap between tech and non-tech people.
+
+Tech people find difficult to understand the acceptance test case developed by non-tech people
+
+BDD:
+====
+- Common language should be used to capture the test cases
+
+
+Introduction to BDD:
+=========================
+
+"Getting the Words Right" is the focus of BDD, leading to building one language that is understood the same way by the project stakeholders
+
+Vision is to bring in consistency, accuracy and meaning
+
+BDD Claims "the words you use about something influence the way you think about it".
+           -------------------------------------------------------------------------
+
+To achieve the words right, they have language called Gherkin language which is used as a common language between non technical and technical people
+Feature - In application feature is used to describe the functionality - Login, forgot password, CO, UO, DO, Report, Graph. Functionality - Small function within the application
+Scenario  - To describe the functional flow with multiple test steps
+Background - Equivaluent to @BeforeMethod in TestNG where common steps are included here
+Scenario Outline - Should have Examples
+Standard TC template has - TC ID, TC Name, TC Description, Requirement id, Test data, Test Steps and Expected Result
+Given - Is used for Precondition
+When - Is used for Test Condition / Test Steps
+Then - Expected Result for Positive scneario
+But - Expected Result for negative scneario
+And - Conjunction (when we have multiple Given instead of writing Given, Given, we can have Given And)
+
+Three layers in Cucumber
+ features
+ step definition
+ runner
+ 
+Example: Login Test Scneario
+==============================
+Given Open Chrome browser
+And Load the application URL
+And When Enter the username as sudhakar (no change or validation is happening in the application, just an entry hence And)
+And Enter the Password as mercury (no change or validation is happening in the application, just an entry hence And)
+When Click login button (validation is happening in the application hence When)
+Then Homepage shoud be displayed
+
+In Cucumber there are 3 layers: Feature, Step Definition and Runner
+========================================================================
+Feature -> Gherkin language -> To write Test Scenarios
+Step Definition -> Java Layer -> To implement Selenium scripts
+Runner -> TestNG -> To execute the test case
+
+Dependencies required for Cucumber:
+====================================
+1) POM.xml should have the below cucumber-java and cucumber-testng dependency with the same version
+
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.3.4</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.3.4</version>
+    <scope>test</scope>
+</dependency>
+
+
+2) We need 2 plugins - Cucumber eclipse (to compile the cucumber code) and Natural plugin (editor to write the BDD Gherkin test scenarios which is easier)
+Go to Help -> Eclipse Marketplace -> Search for Cucmber and install Cucumber Eclipse Plugin and Natural plugin. 
+
+If you are not able to Search for cucumber plugin in the help, then under Help->select Install New Softwares and Add natural and cucumber plugin with the below url.
+
+httP://rlogiacco.github.io/Natural
+https://cucumber.github.io/cucumber-eclipse/update-site
+
+Gherkin Keywords:
+	* Feature
+	* Background
+	* Scenario
+	* Scenario Outline
+	* Given
+	* When
+	* Then
+	* But
+	* And
+	* Examples
+	
+Three layers in Cucumber:
+	* features
+	* step definition
+	* runner
+	
+ - How to write feature file
+ - How to implement the steps in the feature file
+ - How to run the scenario using runner
+ - How to pass data from the steps in the feature file using scenario
+ - How to pass multiple data using scenario outline
+ - How to implement Background for common steps
+ 
+How to have mulitple feature file:
+====================================
+ 
+Cucumber Hooks - @Before and @After
+
+Initially Cucumber was written Ruby Language
+
+TestNG: @BeforeMethod and @AfterMethod
+==========
+
+tags - It is used to categorize the test case
+
+smoke
+functional
+regression
+
+module1
+module2
+
+Groups in TestNG:
+1. @Test have attribute class groups ="smoke" or "regression" or "functional"
+2. In the TestNG xml after <suite> and before <Test>
+	<groups>
+		<run>
+			<include name="smoke"></include>
+		</run>
+	</groups>
+
+
+dependOnGroups ="smoke"
+
+Assertion - Verification
+===========================
+
+Expected Result 
+Actual Result
+
+Two Types of Assertion :
+Hard Assertion
+
+Soft Assertion
+
+
